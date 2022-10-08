@@ -102,8 +102,10 @@ class VOCDataSet(DetDataset):
                     label_id += 1
         else:
             cname2cid = pascalvoc_label()
-
+        print('open??')
+        print(anno_path)
         with open(anno_path, 'r') as fr:
+            print('open????')
             while True:
                 line = fr.readline()
                 if not line:
@@ -140,6 +142,7 @@ class VOCDataSet(DetDataset):
                 gt_class = np.zeros((num_bbox, 1), dtype=np.int32)
                 gt_score = np.zeros((num_bbox, 1), dtype=np.float32)
                 difficult = np.zeros((num_bbox, 1), dtype=np.int32)
+                print(objs)
                 for obj in objs:
                     cname = obj.find('name').text
 

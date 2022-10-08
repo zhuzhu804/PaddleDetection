@@ -127,7 +127,7 @@ def run(FLAGS, cfg):
         trainer.resume_weights(FLAGS.resume)
     elif 'pretrain_weights' in cfg and cfg.pretrain_weights:
         trainer.load_weights(cfg.pretrain_weights)
-
+    print('2here??')
     # training
     trainer.train(FLAGS.eval)
 
@@ -164,7 +164,7 @@ def main():
     check.check_gpu(cfg.use_gpu)
     check.check_npu(cfg.use_npu)
     check.check_version()
-
+    print('here??')
     run(FLAGS, cfg)
 
 
